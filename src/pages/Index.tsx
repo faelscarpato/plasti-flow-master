@@ -1,3 +1,4 @@
+import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -13,6 +14,7 @@ import {
   Clock,
   Settings
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const stats = [
@@ -38,24 +40,8 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b bg-card">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-foreground">QUALY System</h1>
-              <p className="text-sm text-muted-foreground">Sistema de Gestão Industrial</p>
-            </div>
-            <Button variant="outline" size="sm">
-              <Users className="w-4 h-4 mr-2" />
-              Perfil
-            </Button>
-          </div>
-        </div>
-      </header>
-
-      <div className="container mx-auto px-6 py-8">
+    <Layout>
+      <div className="space-y-8">
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {stats.map((stat, index) => {
@@ -205,7 +191,7 @@ const Index = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </Layout>
   );
 };
 
